@@ -1,3 +1,4 @@
+
 [MAIN]
 ignore = .venv, venv, .git
 
