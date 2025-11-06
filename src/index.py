@@ -2,11 +2,12 @@ from varasto import Varasto
 
 
 def main():
-    mehua = Varasto(100.0)
+      mehua = Varasto(100.0)
     olutta = Varasto(100.0, 20.2)
 
     print("Luonnin jälkeen:")
     print(f"Mehuvarasto: {mehua}")
+    print("DEBUG!") 
     print(f"Olutvarasto: {olutta}")
 
     print("Olut getterit:")
@@ -55,4 +56,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+     main()
+#liian pitkä rivi ekdejbbbbbdsnmsssssssssssssssssssssssskakssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss

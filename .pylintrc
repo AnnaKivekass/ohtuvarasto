@@ -1,0 +1,18 @@
+[MAIN]
+ignore = .venv, venv, .git
+
+[MESSAGES CONTROL]
+
+[FORMAT]
+max-line-length = 80
+indent-string = "    "
+
+[REFACTORING]
+max-nested-blocks = 2
+
+[DESIGN]
+max-args = 4
+max-statements = 10
+
+[BASIC]
+bad-functions = print
