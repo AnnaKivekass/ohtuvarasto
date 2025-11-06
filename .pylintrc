@@ -1,6 +1,5 @@
-
 [MAIN]
-ignore = .venv, venv, .git
+ignore = .venv, venv, .git, __pycache__
 
 [MESSAGES CONTROL]
 
