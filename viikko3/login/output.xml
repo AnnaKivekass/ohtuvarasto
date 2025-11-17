@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-11-17T11:58:54.829943" rpa="false" schemaversion="5">
-<suite id="s1" name="Home" source="/home/aokiveka/ohtuvarasto/viikko3/login/src/tests/home.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-11-17T12:27:17.852578" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/home/aokiveka/ohtuvarasto/viikko3/login/src/tests/login.robot">
 <kw name="Open And Configure Browser" owner="resource" type="SETUP">
 <if>
 <branch type="IF" condition="$BROWSER == 'chrome'">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-11-17T11:58:54.933209" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x73e853921280&gt;</msg>
+<msg time="2025-11-17T12:27:17.963576" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f9330a21c70&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-11-17T11:58:54.932974" elapsed="0.000266"/>
+<status status="PASS" start="2025-11-17T12:27:17.963321" elapsed="0.000287"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-11-17T11:58:54.933357" elapsed="0.000107"/>
+<status status="PASS" start="2025-11-17T12:27:17.963722" elapsed="0.000129"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:54.932542" elapsed="0.000959"/>
+<status status="PASS" start="2025-11-17T12:27:17.962854" elapsed="0.001042"/>
 </branch>
 <branch type="ELSE IF" condition="$BROWSER == 'firefox'">
 <kw name="Evaluate" owner="BuiltIn">
@@ -27,134 +27,283 @@
 <arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933606" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.964015" elapsed="0.000018"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--private-window</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933677" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.964092" elapsed="0.000016"/>
 </kw>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933535" elapsed="0.000180"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.963936" elapsed="0.000195"/>
 </branch>
-<status status="PASS" start="2025-11-17T11:58:54.932519" elapsed="0.001220"/>
+<status status="PASS" start="2025-11-17T12:27:17.962831" elapsed="0.001323"/>
 </if>
 <if>
 <branch type="IF" condition="$HEADLESS == 'true'">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.05 seconds</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933899" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.964360" elapsed="0.000018"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933966" elapsed="0.000170"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.964433" elapsed="0.000176"/>
 </kw>
-<status status="NOT RUN" start="2025-11-17T11:58:54.933779" elapsed="0.000390"/>
+<status status="NOT RUN" start="2025-11-17T12:27:17.964200" elapsed="0.000442"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-11-17T11:58:54.934266" elapsed="0.000203"/>
+<status status="PASS" start="2025-11-17T12:27:17.964742" elapsed="0.000192"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:54.934194" elapsed="0.000307"/>
+<status status="PASS" start="2025-11-17T12:27:17.964670" elapsed="0.000294"/>
 </branch>
-<status status="PASS" start="2025-11-17T11:58:54.933768" elapsed="0.000755"/>
+<status status="PASS" start="2025-11-17T12:27:17.964188" elapsed="0.000798"/>
 </if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:54.934774" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-11-17T12:27:17.965240" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-17T11:58:54.934599" elapsed="0.642795"/>
+<status status="PASS" start="2025-11-17T12:27:17.965058" elapsed="0.398857"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:54.932357" elapsed="0.645193"/>
+<status status="PASS" start="2025-11-17T12:27:17.962640" elapsed="0.401426"/>
 </kw>
-<test id="s1-t1" name="Click Login Link" line="8">
-<kw name="Reset Application And Go To Starting Page" type="SETUP">
+<test id="s1-t1" name="Login With Correct Credentials" line="8">
+<kw name="Reset Application Create User And Go To Login Page" type="SETUP">
 <kw name="Reset Application" owner="AppLibrary">
-<status status="PASS" start="2025-11-17T11:58:55.578645" elapsed="0.004963"/>
+<status status="PASS" start="2025-11-17T12:27:18.365106" elapsed="0.005385"/>
 </kw>
-<kw name="Go To Starting Page" owner="resource">
+<kw name="Create User" owner="AppLibrary">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<status status="PASS" start="2025-11-17T12:27:18.370888" elapsed="0.014032"/>
+</kw>
+<kw name="Go To Login Page" owner="resource">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:55.584372" level="INFO">Opening url 'http://localhost:5001'</msg>
-<arg>${HOME_URL}</arg>
+<msg time="2025-11-17T12:27:18.385720" level="INFO">Opening url 'http://localhost:5001/login'</msg>
+<arg>${LOGIN_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-11-17T11:58:55.584205" elapsed="0.575875"/>
+<status status="PASS" start="2025-11-17T12:27:18.385538" elapsed="0.556210"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:55.583946" elapsed="0.576321"/>
+<status status="PASS" start="2025-11-17T12:27:18.385184" elapsed="0.556979"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:55.578241" elapsed="0.582127"/>
+<status status="PASS" start="2025-11-17T12:27:18.364762" elapsed="0.577632"/>
 </kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:56.161062" level="INFO">Clicking link 'Login'.</msg>
+<kw name="Set Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:18.945180" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:18.943892" elapsed="1.668142"/>
+</kw>
+<arg>kalle</arg>
+<status status="PASS" start="2025-11-17T12:27:18.943072" elapsed="1.669426"/>
+</kw>
+<kw name="Set Password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:20.615281" level="INFO">Typing password into text field 'password'.</msg>
+<msg time="2025-11-17T12:27:21.670424" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:20.614677" elapsed="1.613659"/>
+</kw>
+<arg>kalle123</arg>
+<status status="PASS" start="2025-11-17T12:27:20.613251" elapsed="1.615424"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:22.230743" level="INFO">Clicking button 'Login'.</msg>
 <arg>Login</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-17T11:58:56.160623" elapsed="1.627014"/>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:22.230068" elapsed="2.117803"/>
 </kw>
+<status status="PASS" start="2025-11-17T12:27:22.229256" elapsed="2.118998"/>
+</kw>
+<kw name="Login Should Succeed">
+<kw name="Main Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:24.862760" level="INFO">Page title is 'Ohtu Application main page'.</msg>
+<arg>Ohtu Application main page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-17T12:27:24.350374" elapsed="0.512765"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:24.349791" elapsed="0.513735"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:24.348953" elapsed="0.514790"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:18.364177" elapsed="6.500161"/>
+</test>
+<test id="s1-t2" name="Login With Incorrect Password" line="14">
+<kw name="Reset Application Create User And Go To Login Page" type="SETUP">
+<kw name="Reset Application" owner="AppLibrary">
+<status status="PASS" start="2025-11-17T12:27:24.867250" elapsed="0.003630"/>
+</kw>
+<kw name="Create User" owner="AppLibrary">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<status status="PASS" start="2025-11-17T12:27:24.871156" elapsed="0.009985"/>
+</kw>
+<kw name="Go To Login Page" owner="resource">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:24.882378" level="INFO">Opening url 'http://localhost:5001/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-17T12:27:24.882067" elapsed="0.536415"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:24.881559" elapsed="0.537459"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:24.866589" elapsed="0.552676"/>
+</kw>
+<kw name="Set Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:25.422269" level="INFO">Typing text 'kalle' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:25.421500" elapsed="1.602876"/>
+</kw>
+<arg>kalle</arg>
+<status status="PASS" start="2025-11-17T12:27:25.420150" elapsed="1.604632"/>
+</kw>
+<kw name="Set Password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:27.027088" level="INFO">Typing password into text field 'password'.</msg>
+<msg time="2025-11-17T12:27:28.088090" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:27.026354" elapsed="1.626691"/>
+</kw>
+<arg>kalle456</arg>
+<status status="PASS" start="2025-11-17T12:27:27.025493" elapsed="1.627926"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:28.655176" level="INFO">Clicking button 'Login'.</msg>
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:28.654740" elapsed="2.114702"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:28.654037" elapsed="2.115751"/>
+</kw>
+<kw name="Login Should Fail With Message">
 <kw name="Login Page Should Be Open" owner="resource">
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:58.295379" level="INFO">Page title is 'Login'.</msg>
+<msg time="2025-11-17T12:27:31.281205" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-11-17T11:58:57.788532" elapsed="0.507022"/>
+<status status="PASS" start="2025-11-17T12:27:30.771810" elapsed="0.509802"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:57.787932" elapsed="0.507761"/>
+<status status="PASS" start="2025-11-17T12:27:30.771273" elapsed="0.510643"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:55.577655" elapsed="2.718287"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:32.307088" level="INFO">Current page contains text 'Invalid username or password'.</msg>
+<arg>${message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T12:27:31.282313" elapsed="1.025083"/>
+</kw>
+<arg>Invalid username or password</arg>
+<status status="PASS" start="2025-11-17T12:27:30.770444" elapsed="1.537216"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:24.865328" elapsed="7.442763"/>
 </test>
-<test id="s1-t2" name="Click Register Link" line="12">
-<kw name="Reset Application And Go To Starting Page" type="SETUP">
+<test id="s1-t3" name="Login With Nonexistent Username" line="20">
+<kw name="Reset Application Create User And Go To Login Page" type="SETUP">
 <kw name="Reset Application" owner="AppLibrary">
-<status status="PASS" start="2025-11-17T11:58:58.297433" elapsed="0.003770"/>
+<status status="PASS" start="2025-11-17T12:27:32.311022" elapsed="0.006085"/>
 </kw>
-<kw name="Go To Starting Page" owner="resource">
+<kw name="Create User" owner="AppLibrary">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<status status="PASS" start="2025-11-17T12:27:32.317539" elapsed="0.011139"/>
+</kw>
+<kw name="Go To Login Page" owner="resource">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:58.302095" level="INFO">Opening url 'http://localhost:5001'</msg>
-<arg>${HOME_URL}</arg>
+<msg time="2025-11-17T12:27:32.330613" level="INFO">Opening url 'http://localhost:5001/login'</msg>
+<arg>${LOGIN_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-11-17T11:58:58.301899" elapsed="0.524076"/>
+<status status="PASS" start="2025-11-17T12:27:32.330068" elapsed="0.540731"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:58.301555" elapsed="0.525313"/>
+<status status="PASS" start="2025-11-17T12:27:32.329208" elapsed="0.542009"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:58.296968" elapsed="0.530406"/>
+<status status="PASS" start="2025-11-17T12:27:32.309891" elapsed="0.561894"/>
 </kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:58:58.828667" level="INFO">Clicking link 'Register new user'.</msg>
-<arg>Register new user</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-17T11:58:58.828031" elapsed="1.615791"/>
+<kw name="Set Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:32.873890" level="INFO">Typing text 'nonexisting' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:32.873391" elapsed="1.625618"/>
 </kw>
-<kw name="Register Page Should Be Open" owner="resource">
+<arg>nonexisting</arg>
+<status status="PASS" start="2025-11-17T12:27:32.872629" elapsed="1.626888"/>
+</kw>
+<kw name="Set Password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:34.502135" level="INFO">Typing password into text field 'password'.</msg>
+<msg time="2025-11-17T12:27:35.556102" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:34.501448" elapsed="1.633795"/>
+</kw>
+<arg>whatever</arg>
+<status status="PASS" start="2025-11-17T12:27:34.500362" elapsed="1.635085"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:36.136593" level="INFO">Clicking button 'Login'.</msg>
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:27:36.136236" elapsed="2.076739"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:36.135796" elapsed="2.077343"/>
+</kw>
+<kw name="Login Should Fail With Message">
+<kw name="Login Page Should Be Open" owner="resource">
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-17T11:59:00.956591" level="INFO">Page title is 'Register'.</msg>
-<arg>Register</arg>
+<msg time="2025-11-17T12:27:38.719821" level="INFO">Page title is 'Login'.</msg>
+<arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-11-17T11:59:00.445793" elapsed="0.511168"/>
+<status status="PASS" start="2025-11-17T12:27:38.214061" elapsed="0.505918"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:59:00.444806" elapsed="0.512460"/>
+<status status="PASS" start="2025-11-17T12:27:38.213886" elapsed="0.506234"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:58.296323" elapsed="2.661500"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:27:39.735916" level="INFO">Current page contains text 'Invalid username or password'.</msg>
+<arg>${message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T12:27:38.720480" elapsed="1.015590"/>
+</kw>
+<arg>Invalid username or password</arg>
+<status status="PASS" start="2025-11-17T12:27:38.213551" elapsed="1.522654"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:27:32.308834" elapsed="7.427729"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-17T11:59:00.959217" elapsed="0.576921"/>
+<status status="PASS" start="2025-11-17T12:27:39.737004" elapsed="0.574529"/>
 </kw>
-<status status="PASS" start="2025-11-17T11:58:54.830559" elapsed="6.705643"/>
+<status status="PASS" start="2025-11-17T12:27:17.853143" elapsed="22.458509"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Home" id="s1" pass="2" fail="0" skip="0">Home</stat>
+<stat name="Login" id="s1" pass="3" fail="0" skip="0">Login</stat>
 </suite>
 </statistics>
 <errors>
